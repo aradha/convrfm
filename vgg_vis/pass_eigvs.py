@@ -58,20 +58,8 @@ def reduce_image(X, depth, ps=3):
         return X.norm(dim=(3,5))
     else:
         X = X.norm(dim=(3,5))
-        #X = torch.max(X, dim=1)[0]
         return X
-        #X = X**2 
-        #X = X.sum(dim=(1,3,5))
-        #return X.sqrt()
 
-    #X = torch.permute(X, (0, 1, 3, 5, 2, 4))
-    #X = X.reshape(n, c*ps*ps, p*q)
-    #pad_sz = ps//2
-    #folded = fold(X, output_size=(p, q), kernel_size=(ps, ps), padding=(pad_sz, pad_sz))
-
-    #ones = torch.ones(X.shape)
-    #ones = fold(ones, output_size=(p, q), kernel_size=(ps, ps), padding=(pad_sz, pad_sz))
-    #return folded/ones
 
 def multiply_patches(X, M_, ps=3):
     """
