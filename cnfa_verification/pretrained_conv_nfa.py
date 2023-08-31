@@ -243,9 +243,6 @@ def min_max(M):
 def correlation(M1, M2):
     M1 -= M1.mean()
     M2 -= M2.mean()
-    # To avoid numerical issues with small values
-    M1 /= M1.max()
-    M2 /= M2.max()
 
     norm1 = norm(M1.flatten())
     norm2 = norm(M2.flatten())
